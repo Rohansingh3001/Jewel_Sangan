@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewel Sangam - Elegance in Every Detail</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .navbar a {
+            color: #343a40;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 640px) {
+            .navbar nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #f8f9fa;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+
+            .navbar nav.active {
+                display: flex;
+            }
+
+            .navbar .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-col min-h-screen">
+        <!-- Same header/navbar as the main page -->
+        <header class="navbar h-14 flex items-center">
+            <a href="home.html" class="flex items-center justify-center">
+                <i data-lucide="diamond" class="h-6 w-6"></i>
+                <span class="sr-only">Jewel</span>
+            </a>
+            <span class="menu-toggle" id="menu-toggle">☰</span>
+            <nav class="ml-auto flex gap-4 sm:gap-6">
+                <a href="collection.html" class="text-sm font-medium hover:underline underline-offset-4">Collections</a>
+                <a href="new-arrivals.html" class="text-sm font-medium hover:underline underline-offset-4">New Arrivals</a>
+                <a href="about.html" class="text-sm font-medium hover:underline underline-offset-4">About</a>
+                <a href="contact.html" class="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+            </nav>
+        </header>
+        <main class="flex-1">
+            <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
+                <div class="container px-4 md:px-6">
+                    <div class="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+                        <img alt="Elegant diamond necklace" class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last" height="600" src="https://www.shutterstock.com/image-photo/diamonds-necklace-shot-against-black-600nw-184410428.jpg" width="399">
+                        <div class="flex flex-col justify-center space-y-4">
+                            <div class="space-y-2">
+                                <h1 class="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elegance in Every Detail</h1>
+                                <p class="max-w-[600px] text-gray-300 md:text-xl">Discover our exquisite collection of handcrafted jewelry, designed to elevate your style and capture your unique essence.</p>
+                            </div>
+                            <div class="flex flex-col gap-2 min-[400px]:flex-row">
+                                <a href="#" class="inline-flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-gray-900 shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50">Shop Now</a>
+                                <a href="#" class="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+                <div class="container px-4 md:px-6">
+                    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Collections</h2>
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="featured-collections">
+                        <!-- Featured collections will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+            <section class="w-full py-12 md:py-24 lg:py-32">
+                <div class="container px-4 md:px-6">
+                    <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Best Sellers</h2>
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="best-sellers">
+                        <!-- Best sellers will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+            <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+                <div class="container px-4 md:px-6">
+                    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                        <div class="space-y-2">
+                            <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Join Our VIP List</h2>
+                            <p class="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">Be the first to know about new collections, exclusive offers, and special events.</p>
+                        </div>
+                        <div class="w-full max-w-sm space-y-2">
+                            <form class="flex space-x-2" id="newsletter-form">
+                                <input class="max-w-lg flex-1 px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your email" type="email" required>
+                                <button type="submit" class="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50">Subscribe</button>
+                            </form>
+                            <p class="text-xs text-gray-500">By subscribing, you agree to our Terms of Service and Privacy Policy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+            <p class="text-xs text-gray-500">© 2024 Jewel Sangam. All rights reserved.</p>
+            <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+                <a class="text-xs hover:underline underline-offset-4" href="#">Terms of Service</a>
+                <a class="text-xs hover:underline underline-offset-4" href="#">Privacy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="home.js"></script>
+    <script>
+        // JavaScript for toggling the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarNav = document.querySelector('.navbar nav');
+        
+        menuToggle.addEventListener('click', () => {
+            navbarNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

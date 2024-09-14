@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Signup</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="container" id="login-page">
+    <!-- Lottie Animation on the Left -->
+    <div class="lottie-container">
+      <dotlottie-player src="https://lottie.host/06f65fd1-6ece-41e4-8964-fb47514a0610/OVO1bYeJIB.json" 
+        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+      </dotlottie-player>
+    </div>
+
+    <div class="form-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="password-container">
+            <input type="password" id="password" required>
+            <i class="toggle-password" onclick="togglePassword('password')">👁️</i>
+          </div>
+        </div>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <span id="show-signup">Sign up</span></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signup Page -->
+  <div class="container hidden" id="signup-page">
+    <!-- Lottie Animation on the Left -->
+    <div class="lottie-container">
+      <dotlottie-player src="https://lottie.host/06f65fd1-6ece-41e4-8964-fb47514a0610/OVO1bYeJIB.json" 
+        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+      </dotlottie-player>
+    </div>
+
+    <div class="form-container">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="input-group">
+          <label for="email-signup">Email</label>
+          <input type="email" id="email-signup" required>
+        </div>
+        <div class="input-group">
+          <label for="password-signup">Password</label>
+          <div class="password-container">
+            <input type="password" id="password-signup" required>
+            <i class="toggle-password" onclick="togglePassword('password-signup')">👁️</i>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-container">
+            <input type="password" id="confirm-password" required>
+            <i class="toggle-password" onclick="togglePassword('confirm-password')">👁️</i>
+          </div>
+        </div>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <span id="show-login">Login</span></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="login.js"></script>
+</body>
+</html>

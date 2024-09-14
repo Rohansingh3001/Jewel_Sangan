@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jewel Sangam</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for a classier contact page */
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .navbar a {
+            color: #343a40;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 640px) {
+            .navbar nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #f8f9fa;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+
+            .navbar nav.active {
+                display: flex;
+            }
+
+            .navbar .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Contact form styles */
+        .contact-form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .side-image {
+            background: url('https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/26793426/2024/1/5/5a25c0b5-3d3d-462b-a983-e7da34f0f7831704457663606KushalsFashionJewelleryRedClassicDropEarrings1.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-col min-h-screen">
+        <!-- Same header/navbar as the main page -->
+        <header class="navbar h-14 flex items-center">
+            <a href="home.html" class="flex items-center justify-center">
+                <i data-lucide="diamond" class="h-6 w-6"></i>
+                <span class="sr-only">Jewel</span>
+            </a>
+            <span class="menu-toggle" id="menu-toggle">☰</span>
+            <nav class="ml-auto flex gap-4 sm:gap-6">
+                <a href="collection.html" class="text-sm font-medium hover:underline underline-offset-4">Collections</a>
+                <a href="new-arrivals.html" class="text-sm font-medium hover:underline underline-offset-4">New Arrivals</a>
+                <a href="about.html" class="text-sm font-medium hover:underline underline-offset-4">About</a>
+                <a href="contact.html" class="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+            </nav>
+        </header>
+
+        <main class="flex-1">
+            <section class="w-full py-12 md:py-24 lg:py-32">
+                <div class="container px-4 md:px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="contact-form max-w-lg mx-auto">
+                            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Contact Us</h1>
+                            <p class="text-center text-gray-600 mb-12">We're here to help. Get in touch with us for any inquiries or support.</p>
+                            <form action="submit_contact_form" method="post" class="grid gap-6">
+                                <div>
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div>
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div>
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="side-image"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Same footer -->
+        <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+            <p class="text-xs text-gray-500">© 2024 Jewel Sangam. All rights reserved.</p>
+            <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+                <a class="text-xs hover:underline underline-offset-4" href="#">Terms of Service</a>
+                <a class="text-xs hover:underline underline-offset-4" href="#">Privacy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="home.js"></script>
+    <script>
+        // JavaScript for toggling the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarNav = document.querySelector('.navbar nav');
+        
+        menuToggle.addEventListener('click', () => {
+            navbarNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

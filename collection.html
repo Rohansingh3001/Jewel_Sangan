@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Jewel Sangam</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="flex-col min-h-screen">
+        <style>
+            .navbar {
+                background-color: #f8f9fa;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 0 1rem;
+                position: relative;
+            }
+    
+            .navbar a {
+                color: #343a40;
+                font-size: 0.875rem;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                transition: color 0.3s, border-bottom 0.3s;
+            }
+    
+            .navbar a:hover {
+                color: #007bff;
+                border-bottom: 2px solid #007bff;
+            }
+    
+            .navbar .menu-toggle {
+                display: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                position: absolute;
+                right: 1rem;
+            }
+    
+            .navbar nav {
+                display: flex;
+                gap: 1rem;
+            }
+    
+            /* Mobile view adjustments */
+            @media (max-width: 640px) {
+                .navbar nav {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    z-index: 10;
+                }
+    
+                .navbar nav.active {
+                    display: flex;
+                }
+    
+                .navbar .menu-toggle {
+                    display: block;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-col min-h-screen">
+            <!-- Same header/navbar as the main page -->
+            <header class="navbar h-14 flex items-center">
+                <a href="home.html" class="flex items-center justify-center">
+                    <i data-lucide="diamond" class="h-6 w-6"></i>
+                    <span class="sr-only">Jewel</span>
+                </a>
+                <span class="menu-toggle" id="menu-toggle">☰</span>
+                <nav class="ml-auto flex gap-4 sm:gap-6">
+                    <a href="collection.html" class="text-sm font-medium hover:underline underline-offset-4">Collections</a>
+                    <a href="new-arrivals.html" class="text-sm font-medium hover:underline underline-offset-4">New Arrivals</a>
+                    <a href="about.html" class="text-sm font-medium hover:underline underline-offset-4">About</a>
+                    <a href="contact.html" class="text-sm font-medium hover:underline underline-offset-4">Contact</a>
+                </nav>
+        </header>
+
+        <main class="flex-1">
+            <section class="w-full py-12 md:py-24 lg:py-32">
+                <div class="container px-4 md:px-6">
+                    <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Collections</h1>
+                    <p class="text-center text-gray-600 mb-12">Explore our exclusive jewelry collections featuring diamonds, pearls, and more.</p>
+                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="collections-grid">
+                        <!-- Dynamic content will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Same footer -->
+        <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+            <p class="text-xs text-gray-500">© 2024 Luxe Jewels. All rights reserved.</p>
+            <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+                <a class="text-xs hover:underline underline-offset-4" href="#">Terms of Service</a>
+                <a class="text-xs hover:underline underline-offset-4" href="#">Privacy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="collection.js"></script>
+    <script>
+        // JavaScript for toggling the mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarNav = document.querySelector('.navbar nav');
+        
+        menuToggle.addEventListener('click', () => {
+            navbarNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
