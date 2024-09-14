@@ -7,25 +7,35 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom styles for a classier contact page */
+        /* Custom styles for a modern contact page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
         .navbar {
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 0 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0 2rem;
             position: relative;
+            z-index: 10;
         }
 
         .navbar a {
-            color: #343a40;
+            color: #333;
             font-size: 0.875rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s, border-bottom 0.3s;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s, background-color 0.3s;
         }
 
         .navbar a:hover {
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
+            color: #ffffff;
+            background-color: #007bff;
+            border-radius: 4px;
         }
 
         .navbar .menu-toggle {
@@ -34,11 +44,14 @@
             cursor: pointer;
             position: absolute;
             right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .navbar nav {
             display: flex;
             gap: 1rem;
+            align-items: center;
         }
 
         /* Mobile view adjustments */
@@ -50,9 +63,9 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: #f8f9fa;
+                background-color: #ffffff;
                 padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 z-index: 10;
             }
 
@@ -66,48 +79,129 @@
         }
 
         /* Contact form styles */
-        .contact-form {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-        }
+.contact-form {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width as needed */
+    max-width: 600px; /* Max width to control the size */
+    margin: 0 auto; /* Centering the form */
+    /* Remove border-radius for a rectangular shape */
+    border-radius: 0;
+}
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
+.contact-form h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
+.contact-form p {
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
-        .contact-form button {
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            padding: 0.75rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+}
 
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Slightly rounded corners for inputs */
+    margin-bottom: 1rem;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
 
         .side-image {
             background: url('https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/26793426/2024/1/5/5a25c0b5-3d3d-462b-a983-e7da34f0f7831704457663606KushalsFashionJewelleryRedClassicDropEarrings1.jpg') no-repeat center center;
             background-size: cover;
             border-radius: 8px;
             height: 100%;
+            box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #ffffff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #0056b3;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup .message {
+            color: #007bff;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .popup button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.875rem;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -133,9 +227,9 @@
                 <div class="container px-4 md:px-6">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div class="contact-form max-w-lg mx-auto">
-                            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Contact Us</h1>
-                            <p class="text-center text-gray-600 mb-12">We're here to help. Get in touch with us for any inquiries or support.</p>
-                            <form action="submit_contact_form" method="post" class="grid gap-6">
+                            <h1>Contact Us</h1>
+                            <p>We're here to help. Get in touch with us for any inquiries or support.</p>
+                            <form id="contact-form" action="submit_contact_form" method="post" class="grid gap-6">
                                 <div>
                                     <label for="name">Name</label>
                                     <input type="text" id="name" name="name" required>
@@ -157,6 +251,12 @@
             </section>
         </main>
 
+        <!-- Popup for form submission -->
+        <div id="popup" class="popup">
+            <div class="message">Your message has been sent successfully!</div>
+            <button id="popup-close">Close</button>
+        </div>
+
         <!-- Same footer -->
         <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
             <p class="text-xs text-gray-500">© 2024 Jewel Sangam. All rights reserved.</p>
@@ -174,6 +274,27 @@
         
         menuToggle.addEventListener('click', () => {
             navbarNav.classList.toggle('active');
+        });
+
+        // JavaScript for handling form submission and showing popup
+        const form = document.getElementById('contact-form');
+        const popup = document.getElementById('popup');
+        const popupClose = document.getElementById('popup-close');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            popup.classList.add('active'); // Show the popup
+
+            setTimeout(() => {
+                popup.classList.remove('active'); // Hide the popup
+                form.reset(); // Reset the form fields
+                window.location.reload(); // Refresh the page
+            }, 2000); // Adjust the timeout duration as needed
+        });
+
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', () => {
+            popup.classList.remove('active');
         });
     </script>
 </body>
